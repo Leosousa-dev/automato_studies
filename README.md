@@ -11,10 +11,8 @@ representação matemática que descreve um modelo computacional simples. Ele co
 
 Matematicamente, um AFD é representado por uma tupla:
 
-$$
-M=(Q,Σ,δ,q0, F)
-$$
---
+$$M=(Q,Σ,δ,q0, F)$$
+
 ---
 - **Q** é o conjunto de estados finitos.
 - **Σ** é o alfabeto de entrada.
