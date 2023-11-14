@@ -2,5 +2,5 @@
 
 
 export function isSpace(char: string): boolean{
-    return char === " " ||  char === "\n";
+    return char === ' ' || char === '\n' || char === '\t';
 }
