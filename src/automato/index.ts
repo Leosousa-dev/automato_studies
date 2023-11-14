@@ -23,7 +23,7 @@ q6: recognize float
        (q5)          (q6)
 */
 
-import { isDigit } from "../utils";
+import { isDigit, isPointer } from "../utils";
 
 enum States{
    q0 = "q0",
@@ -47,14 +47,14 @@ function afd(char: string, currentState: string){
          }
       case States.q1:
          if (isDigit(char)) return States.q1
-         else if(char === '.') return States.q2
+         else if(isPointer(char)) return States.q2
          else return States.q5;
       case States.q2:
          if (isDigit(char)) return States.q3;
          else return States.q5;
       case States.q3:
-         if (isDigit(char)) return 'q3';
-         else return 'q6';
+         if (isDigit(char)) return States.q3;
+         else return States.q6;
       default:
          console.error("unrecognized token: ", char)
          return States.q4;
@@ -62,4 +62,4 @@ function afd(char: string, currentState: string){
 }
 
 
-console.log(afd("34.4", States.q0))
+console.log(afd("4. 4", States.q0))
