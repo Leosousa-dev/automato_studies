@@ -1,9 +1,10 @@
 import { States } from "../types/states";
 import Transition from "./transition";
 
-export default function Automato(currentState: States = States.q0,input: string){
-   const nexState = Transition(currentState, input);
-   console.log(`${currentState}, ${input} -> ${nexState}`)
-   
+export default function Automato(currentState: States,input: string): States{
+   let nexState = Transition(currentState, input);
+   console.log(`currentState e : ${currentState}. o char e ${input}`)
+   console.log(nexState)
+
    return nexState;
 }
